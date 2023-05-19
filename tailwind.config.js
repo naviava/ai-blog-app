@@ -11,15 +11,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: {
-          1: "#F2F2F2",
-          2: "#E5E5E5",
-          3: "#D9D9D9",
-          4: "#CCCCCC",
-          5: "#BFBFBF",
-        },
+        "wh-10": "#f4f4f4",
+        "wh-50": "#fbfbfb",
+        "wh-100": "#c9c9c9",
+        "wh-300": "#939393",
+        "wh-500": "#595959",
+        "accent-red": "#ea9648",
+        "accent-orange": "#f6cf68",
+        "accent-green": "#c2e9b4",
       },
+      backgroundImage: (theme) => ({
+        "gradient-gradual":
+          "liner-gradient(180deg, rgba(116, 116, 116, 0) 66.15%, #000000 100%)",
+      }),
+    },
+    screens: {
+      xs: "480px",
+      sm: "768px",
+      md: "1060px",
     },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/typography"),
+  ],
 };
