@@ -14,11 +14,11 @@ import Subscribe from "@/components/Subscribe";
 
 // Lib and utils.
 import getPosts from "@/utils/getPosts";
-import blurImageLoader from "@/utils/blurImageLoader";
+import { blurMultipleImages } from "@/utils/blurImageLoader";
 
 export default async function Home() {
   const rawPosts = await getPosts();
-  const posts = await blurImageLoader(rawPosts);
+  const posts = await blurMultipleImages(rawPosts);
 
   const trendingPosts = posts.slice(0, 4);
   const techPosts = posts.filter((post) => post.category === "Tech");
