@@ -2,6 +2,7 @@
 
 // React and Next.
 import Link from "next/link";
+import Image from "next/image";
 
 // External packages.
 import clsx from "clsx";
@@ -40,7 +41,13 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
         className="basis-full transition hover:opacity-70"
       >
         <div className={`relative mb-3 w-auto ${imageHeight}`}>
-          Image goes here
+          <Image
+            fill
+            alt="Main image of the article."
+            src={post?.image}
+            placeholder="blur"
+            className="object-cover"
+          />
         </div>
       </Link>
       <div className="basis-full hover:opacity-70">
@@ -60,7 +67,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
         </div>
         <p
           className={clsx(
-            "text-wh-100",
+            "text-wh-500",
             isLongForm ? "line-clamp-5" : "line-clamp-3"
           )}
         >

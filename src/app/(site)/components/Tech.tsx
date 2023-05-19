@@ -22,24 +22,24 @@ const Tech: React.FC<TechProps> = ({ posts }) => {
       {/* Article cards. */}
       <div className="grid-cols-2 grid-rows-3 gap-8 py-5 sm:grid">
         <ArticleCard
-          className="col-span-1 row-span-3 bg-wh-500"
+          className="col-span-1 row-span-3"
           imageHeight="h-96"
           post={posts[0]}
         />
         <ArticleCard
-          className="col-span-1 row-span-1 mt-10 flex justify-between gap-3 bg-wh-500 sm:mt-0"
+          className="col-span-1 row-span-1 mt-10 flex justify-between gap-3 sm:mt-0"
           imageHeight="h-48"
           isSmallCard
           post={posts[1]}
         />
         <ArticleCard
-          className="col-span-1 row-span-1 mt-10 flex justify-between gap-3 bg-wh-500 sm:mt-0"
+          className="col-span-1 row-span-1 mt-10 flex justify-between gap-3 sm:mt-0"
           imageHeight="h-48"
           isSmallCard
           post={posts[2]}
         />
         <ArticleCard
-          className="col-span-1 row-span-1 mt-10 flex justify-between gap-3 bg-wh-500 sm:mt-0"
+          className="col-span-1 row-span-1 mt-10 flex justify-between gap-3 sm:mt-0"
           imageHeight="h-48"
           isSmallCard
           post={posts[3]}

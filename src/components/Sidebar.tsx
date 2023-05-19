@@ -2,6 +2,10 @@
 import Subscribe from "./Subscribe";
 import SocialLinks from "./SocialLinks";
 
+// Lib and utils.
+import images from "@/utils/images";
+import Image from "next/image";
+
 interface SidebarProps {}
 
 const Sidebar: React.FC<SidebarProps> = ({}) => {
@@ -14,11 +18,24 @@ const Sidebar: React.FC<SidebarProps> = ({}) => {
         <SocialLinks isDark />
       </div>
       <Subscribe />
-      <div className="my-8 bg-wh-900">Advert image.</div>
+      <div className="relative my-8">
+        <Image
+          alt="Advert"
+          src={images.ad2}
+          placeholder="blur"
+          className=" my-8 hidden w-full object-cover md:block"
+        />
+      </div>
       <h4 className="bg-wh-900 px-5 py-3 text-center text-xs font-bold text-wh-50">
         About the blog
       </h4>
-      <div className="my-8 bg-wh-900">Profile image.</div>
+      <div className="my-3 flex justify-center">
+        <Image
+          alt="Advert"
+          src={images.aboutProfileImage}
+          className="h-[250px] w-[500px] object-cover"
+        />
+      </div>
       <h4 className="px-5 py-3 text-center font-bold text-wh-500">
         Navin Avadhani
       </h4>

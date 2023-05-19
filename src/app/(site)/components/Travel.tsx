@@ -22,23 +22,23 @@ const Travel: React.FC<TravelProps> = ({ posts }) => {
       {/* Article cards. */}
       <div className="justify-between gap-8 sm:flex">
         <ArticleCard
-          className="mt-5 bg-wh-500 sm:mt-0"
+          className="mt-5 sm:mt-0"
           imageHeight="h-80"
           post={posts[0]}
         />
         <ArticleCard
-          className="mt-5 bg-wh-500 sm:mt-0"
+          className="mt-5 sm:mt-0"
           imageHeight="h-80"
           post={posts[1]}
         />
         <ArticleCard
-          className="mt-5 bg-wh-500 sm:mt-0"
+          className="mt-5 sm:mt-0"
           imageHeight="h-80"
           post={posts[2]}
         />
       </div>
       <ArticleCard
-        className="mb-5 mt-7 flex items-center justify-between gap-3 bg-wh-500"
+        className="mb-5 mt-7 flex items-center justify-between gap-3"
         imageHeight="h-80"
         post={posts[3]}
       />

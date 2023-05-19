@@ -14,28 +14,11 @@ import Subscribe from "@/components/Subscribe";
 
 // Lib and utils.
 import getPosts from "@/utils/getPosts";
+import blurImageLoader from "@/utils/blurImageLoader";
 
 export default async function Home() {
-  const posts = await getPosts();
-
-  // const formattedPosts = () => {
-  //   const trendingPosts: Post[] = [];
-  //   const techPosts: Post[] = [];
-  //   const travelPosts: Post[] = [];
-  //   const otherPosts: Post[] = [];
-
-  //   posts.forEach((post, idx) => {
-  //     if (idx < 4) trendingPosts.push(post);
-
-  //     if (post.category === "Tech") techPosts.push(post);
-  //     else if (post.category === "Travel") travelPosts.push(post);
-  //     else otherPosts.push(post);
-  //   });
-
-  //   return [trendingPosts, techPosts, travelPosts, otherPosts];
-  // };
-
-  // const [trendingPosts, techPosts, travelPosts, otherPosts] = formattedPosts();
+  const rawPosts = await getPosts();
+  const posts = await blurImageLoader(rawPosts);
 
   const trendingPosts = posts.slice(0, 4);
   const techPosts = posts.filter((post) => post.category === "Tech");
