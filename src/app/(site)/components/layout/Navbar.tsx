@@ -3,7 +3,7 @@ import Link from "next/link";
 
 // Components.
 import TitleBanner from "./TitleBanner";
-import SocialLinks from "./SocialLinks";
+import SocialLinks from "@/components/SocialLinks";
 
 interface NavbarProps {}
 
