@@ -23,7 +23,7 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         "gradient-gradual":
-          "liner-gradient(180deg, rgba(116, 116, 116, 0) 66.15%, #000000 100%)",
+          "linear-gradient(180deg, rgba(116, 116, 116, 0) 66.15%, #000000 100%)",
       }),
     },
     screens: {

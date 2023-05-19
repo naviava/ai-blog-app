@@ -1,9 +1,14 @@
+// Types.
+import { Post } from "@prisma/client";
+
 // Components.
 import ArticleCard from "@/components/ArticleCard";
 
-interface TechProps {}
+interface TechProps {
+  posts: Post[];
+}
 
-const Tech: React.FC<TechProps> = ({}) => {
+const Tech: React.FC<TechProps> = ({ posts }) => {
   return (
     <section>
       <hr className="border-1" />
@@ -19,21 +24,25 @@ const Tech: React.FC<TechProps> = ({}) => {
         <ArticleCard
           className="col-span-1 row-span-3 bg-wh-500"
           imageHeight="h-96"
+          post={posts[0]}
         />
         <ArticleCard
           className="col-span-1 row-span-1 mt-10 flex justify-between gap-3 bg-wh-500 sm:mt-0"
           imageHeight="h-48"
           isSmallCard
+          post={posts[1]}
         />
         <ArticleCard
           className="col-span-1 row-span-1 mt-10 flex justify-between gap-3 bg-wh-500 sm:mt-0"
           imageHeight="h-48"
           isSmallCard
+          post={posts[2]}
         />
         <ArticleCard
           className="col-span-1 row-span-1 mt-10 flex justify-between gap-3 bg-wh-500 sm:mt-0"
           imageHeight="h-48"
           isSmallCard
+          post={posts[3]}
         />
       </div>
     </section>

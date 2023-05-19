@@ -1,8 +1,14 @@
+// Types.
+import { Post } from "@prisma/client";
+
+// Components.
 import TrendingCard from "./TrendingCard";
 
-interface TrendingProps {}
+interface TrendingProps {
+  posts: Post[];
+}
 
-const Trending: React.FC<TrendingProps> = ({}) => {
+const Trending: React.FC<TrendingProps> = ({ posts }) => {
   return (
     <section className="pb-10 pt-3">
       <div className="flex items-center gap-3">
@@ -14,10 +20,20 @@ const Trending: React.FC<TrendingProps> = ({}) => {
         </p>
       </div>
       <div className="my-3 grid-cols-4 grid-rows-2 gap-5 sm:grid sm:h-[600px]">
-        <TrendingCard className="col-span-2 row-span-2 bg-wh-500" />
-        <TrendingCard className="col-span-2 row-span-1 bg-wh-500" />
-        <TrendingCard className="col-span-1 row-span-1 bg-wh-500" />
-        <TrendingCard className="col-span-1 row-span-1 bg-wh-500" />
+        <TrendingCard
+          className="col-span-2 row-span-2 bg-wh-500"
+          post={posts[0]}
+        />
+        {posts.map((post, idx) => {
+          if (idx > 0 && idx < 3)
+            return (
+              <TrendingCard
+                key={post.id}
+                className="col-span-2 row-span-1 bg-wh-500"
+                post={posts[idx]}
+              />
+            );
+        })}
       </div>
       <p className="text-sm">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem,

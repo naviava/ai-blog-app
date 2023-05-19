@@ -1,9 +1,14 @@
+// Types.
+import { Post } from "@prisma/client";
+
 // Components.
 import ArticleCard from "@/components/ArticleCard";
 
-interface TravelProps {}
+interface TravelProps {
+  posts: Post[];
+}
 
-const Travel: React.FC<TravelProps> = ({}) => {
+const Travel: React.FC<TravelProps> = ({ posts }) => {
   return (
     <section className="mt-10">
       <hr className="border-1" />
@@ -16,13 +21,26 @@ const Travel: React.FC<TravelProps> = ({}) => {
       </div>
       {/* Article cards. */}
       <div className="justify-between gap-8 sm:flex">
-        <ArticleCard className="mt-5 bg-wh-500 sm:mt-0" imageHeight="h-80" />
-        <ArticleCard className="mt-5 bg-wh-500 sm:mt-0" imageHeight="h-80" />
-        <ArticleCard className="mt-5 bg-wh-500 sm:mt-0" imageHeight="h-80" />
+        <ArticleCard
+          className="mt-5 bg-wh-500 sm:mt-0"
+          imageHeight="h-80"
+          post={posts[0]}
+        />
+        <ArticleCard
+          className="mt-5 bg-wh-500 sm:mt-0"
+          imageHeight="h-80"
+          post={posts[1]}
+        />
+        <ArticleCard
+          className="mt-5 bg-wh-500 sm:mt-0"
+          imageHeight="h-80"
+          post={posts[2]}
+        />
       </div>
       <ArticleCard
         className="mb-5 mt-7 flex items-center justify-between gap-3 bg-wh-500"
         imageHeight="h-80"
+        post={posts[3]}
       />
     </section>
   );
