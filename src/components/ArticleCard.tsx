@@ -19,7 +19,7 @@ const ArticleCard: React.FC<ArticleCardProps> = ({
 }) => {
   return (
     <div className={className}>
-      <Link href="/" className="basis-full hover:opacity-70">
+      <Link href="/" className="basis-full transition hover:opacity-70">
         <div className={`relative mb-3 w-auto ${imageHeight}`}>
           Image goes here
         </div>
