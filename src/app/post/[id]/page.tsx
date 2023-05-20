@@ -1,3 +1,5 @@
+import { notFound } from "next/navigation";
+
 // Components.
 import Sidebar from "@/components/Sidebar";
 import BlogPost from "./components/BlogPost";
@@ -14,7 +16,7 @@ const BlogPostPage = async ({ params }: IParams) => {
   const { id } = params;
   const rawPost = await getPostById(id);
 
-  if (!rawPost) return null;
+  if (!rawPost) notFound();
   const post = await blurSingleImage(rawPost);
 
   return (
