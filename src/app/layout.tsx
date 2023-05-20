@@ -8,8 +8,8 @@ import Footer from "./(site)/components/layout/Footer";
 const font = Raleway({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Blog AI App",
-  description: "Blogs written by AI",
+  title: "Blog of the Future",
+  description: "Blog of the Future is a blog about the future.",
 };
 
 export default function RootLayout({

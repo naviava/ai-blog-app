@@ -55,7 +55,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
     editorProps: {
       attributes: {
         class:
-          "prose prose-sm xl:prose-2xl leading-8 focus:outline-none w-full max-w-full text-justify",
+          "prose prose-sm xl:prose-2xl leading-8 focus:outline-none w-full max-w-full",
       },
     },
   });
